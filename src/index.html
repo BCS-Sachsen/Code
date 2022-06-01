@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+const appStoreUrl = 'https://www.apple.com/app-store/';
+const playStoreUrl = 'https://play.google.com/store/apps';
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    if (/Mac/.test(userAgent) && !window.MSStream) {
+        return "Mac";
+    }
+
+    return "unknown";
+}
+function goToStorePage(){
+    let os = getMobileOperatingSystem();
+    if (os == "Android" || os == "unknown") {
+        window.location.href = playStoreUrl; 
+    } else if (os == "iOS" || os == "Mac") {
+        window.location.href = appStoreUrl;
+    }else{
+        window.location.href = playStoreUrl;
+    }
+}
+</script>
+</head>
+<body onload="DetectAndServe()">
+</body>
+</html>
