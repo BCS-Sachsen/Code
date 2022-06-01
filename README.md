@@ -1,8 +1,8 @@
 # app-store-link-template
 
-This is a static website template that determines the redirection destination depending on the operating system. 
+This is a static website template that determines the redirection destination depending on the OS of your device. 
 
-By default, it redirects to the App Store for iOS or Mac, and to the Play Storee for other OS.
+By default, it redirects to the App Store for iOS or Mac, and to the Play Store for other OS.
 
 # Example
 
